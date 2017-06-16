@@ -171,7 +171,7 @@ function CheckNumbers () {
 
 function CheckSpelling () {
     Param([string]$str)
-    $data = Invoke-RestMethod "https://api.cognitive.microsoft.com/bing/v5.0/spellcheck?text=$str&count=3&mkt=en-us" -Headers @{ "Ocp-Apim-Subscription-Key" = "5f4e2cbf3cd345548a3d79c0583f51cd" }
+    $data = Invoke-RestMethod "https://api.cognitive.microsoft.com/bing/v5.0/spellcheck?text=$str&count=3&mkt=en-us" -Headers @{ "Ocp-Apim-Subscription-Key" = "< INSERT YOUR OWN API KEY >" }
 
     $data
 }
@@ -181,7 +181,7 @@ function CheckWord () {
     param([string]$str)
 
     try {
-        $data = Invoke-RestMethod "https://od-api.oxforddictionaries.com/api/v1/entries/en/$str" -Headers @{"app_id" = "c3e95f65"; "app_key" = "dc3939f9b3e8b0480fdd72730bfaaf39"}
+        $data = Invoke-RestMethod "https://od-api.oxforddictionaries.com/api/v1/entries/en/$str" -Headers @{"app_id" = "< INSERT YOUR OWN APP ID >"; "app_key" = " < INSERT YOUR OWN API KEY >}
     }
     catch {
         $checkwordError = $_.Exception.Response.StatusCode.value__
