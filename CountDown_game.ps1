@@ -1,35 +1,3 @@
-<#
-Random Countdown game that I'll fail horribly at.
-Oxford API App ID: c3e95f65
-Oxford API Key: dc3939f9b3e8b0480fdd72730bfaaf39
-Oxford Base URL: https://od-api.oxforddictionaries.com/api/v1
-
-HOLDING
-
-TODO
-    Check numbers in answer are in given numbers.
-
-PROBLEMS
-    # FIXED :: Oxfords API doesn't seem to have plurals. Check the word 'ideas' for example. 
-        Horrid idea: Use $data.results.lexicalEntries.entries.senses.subsenses.examples.text | ?{$_ -match "ideas"}
-            I can't confirm that there will always be a plural (If available) used in this location though. 
-
-    # FIXED :: Maths issue. Can't take user input as maths equa. 
-        Checked out WoflramAlpha's API and it works. See: https://products.wolframalpha.com/api/explorer/
-            Entered (2+2)*12411251 and got a result.
-        ######BELOW#######
-        WOOOOOOOW Ignore all issues with this. Powershell can do this via: [string]$string = "(2+2)*214"; Invoke-Expression $string 
-
-    Letters:
-        # FIXED :: My checks are still not working... I just got E O E K P R P E A and used the word "peper" in hopes of either getting the word or getting a the
-        spellcheck error "Not valid English word" but instead I Got "Invalid. You either used a letter that wasn't there or the same letter twice"
-            Idea: This is prob because I need to nest the other if statements into this test as I added it well after the fact.
-                    Actually.. It's prob because it's remove all instances of the letter and not just a single one.
-                    Might try and use indexing to get around
-                        Find the index of $letter and use .RemoveAt
-                            Might need to conver $letters to a list array.
-#>
-
 # Get API creds from file
 $apiTemp = (Get-Content .\keys.txt).Split("=").Split(",").Replace(" ", "")
 $bingAPI = $apiTemp[1]
