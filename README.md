@@ -14,3 +14,11 @@ Bing = 5f4e2cbf3de242548a3d79c0333f51cd
 Oxford = c3e76f85, dc2334f9b3e8b24320add72730bfaaf39
 ```
 ###### FAKE KEYS
+
+
+## Adding
+* At the moment there are no checks being done to ensure numbers being used in 
+  the answer are the numbers given or if they are being used more then once.
+
+* Full Game. Will be three rounds of each game mode. 
+  Numbers -> Letters -> Numbers -> Letters -> Numbers -> Letters -> END 
